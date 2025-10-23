@@ -40,13 +40,13 @@ a{
     color: whitesmoke;
     font-size: 50px;
     font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 2px 2px 4px black;
 }
 .hero-section .content p{
     color: whitesmoke;
     font-size: 24px;
     margin-top: 10px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 1px 1px 3px black;
 }
 
 .register-button{
@@ -74,7 +74,7 @@ a{
     font-size: 16px;
     color: black;
     line-height: 1.6;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 8px black;
     margin: 20px auto;
     max-width: 1200px;
     border-radius: 5px;
@@ -87,7 +87,7 @@ a{
     gap: 30px;
     margin: 20px auto;
     max-width: 1200px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 8px black;
     border-radius: 5px;
 }
 .para1 p{
@@ -111,7 +111,7 @@ a{
     gap: 30px;
     margin: 20px auto;
     max-width: 1200px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 8px black;
     border-radius: 5px;
 }
 .para2 img{
@@ -206,4 +206,121 @@ a{
 }
 .submit-button:hover{
     background-color: darkblue;
+}
+
+@media (max-width: 992px) {
+  .nav-links {
+    margin-left: 100px; 
+    width: 50%;
+  }
+  a {
+    font-size: 18px;
+  }
+
+  .hero-section {
+    height: 300px;
+  }
+  .hero-section .content h1 {
+    font-size: 36px;
+  }
+  .hero-section .content p {
+    font-size: 20px;
+  }
+
+  .para1, .para2 {
+    gap: 20px;
+    padding: 20px;
+  }
+  .para1 img, .para2 img {
+    width: 300px;
+    height: 220px;
+  }
+
+  .form-row {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    text-align: center;
+  }
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    margin-left: 0;
+    gap: 10px;
+  }
+
+  .hero-section {
+    height: auto;
+    padding: 40px 10px;
+  }
+  .hero-section .content h1 {
+    font-size: 28px;
+  }
+  .hero-section .content p {
+    font-size: 18px;
+  }
+
+  .para1, .para2 {
+    flex-direction: column;
+    text-align: center;
+  }
+  .para1 img, .para2 img {
+    width: 100%;
+    height: auto;
+  }
+
+  .eligibility-section h2 {
+    font-size: 28px;
+  }
+  .criteria-item {
+    font-size: 18px;
+  }
+
+  .form-container {
+    padding: 20px;
+  }
+  .form-row {
+    flex-direction: column;
+  }
+  .submit-button {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .logopic {
+    width: 40px;
+  }
+  a {
+    font-size: 16px;
+  }
+
+  .hero-section .content h1 {
+    font-size: 22px;
+  }
+  .hero-section .content p {
+    font-size: 14px;
+  }
+
+  .para, .para1, .para2 {
+    padding: 10px;
+  }
+  .para1 p, .para2 p {
+    font-size: 16px;
+  }
+
+  .form-group label {
+    font-size: 14px;
+  }
+  .form-group input {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .submit-button {
+    font-size: 16px;
+    padding: 12px 30px;
+  }
 }
