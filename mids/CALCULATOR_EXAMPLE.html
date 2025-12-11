@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .calculator {
+            background: #222;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            width: 320px;
+        }
+        
+        h2 {
+            color: white;
+            text-align: center;
+            margin-top: 0;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        
+        .display {
+            width: 100%;
+            height: 80px;
+            background: #1a1a1a;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 36px;
+            text-align: right;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        
+        button {
+            padding: 25px;
+            font-size: 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            background: #444;
+            color: white;
+            transition: all 0.2s;
+            font-weight: bold;
+        }
+        
+        button:hover {
+            transform: scale(1.05);
+            background: #555;
+        }
+        
+        button:active {
+            transform: scale(0.95);
+        }
+        
+        .btn-number {
+            background: #444;
+        }
+        
+        .btn-number:hover {
+            background: #555;
+        }
+        
+        .btn-operator {
+            background: #ff9500;
+        }
+        
+        .btn-operator:hover {
+            background: #ffaa33;
+        }
+        
+        .btn-equals {
+            background: #4CAF50;
+            grid-column: span 2;
+        }
+        
+        .btn-equals:hover {
+            background: #5cbf60;
+        }
+        
+        .btn-clear {
+            background: #f44336;
+        }
+        
+        .btn-clear:hover {
+            background: #f55a4e;
+        }
+        
+        .btn-delete {
+            background: #ff6b6b;
+        }
+        
+        .btn-zero {
+            grid-column: span 2;
+        }
+        
+        .info-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .info-box h3 {
+            color: #333;
+            margin-top: 0;
+        }
+        
+        .info-box ul {
+            color: #666;
+        }
+        
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #e83e8c;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧮 Calculator Examples</h1>
+    
+    <div class="info-box">
+        <h3>💡 How These Calculators Work:</h3>
+        <ul>
+            <li><strong>Calculator 1 (Simple):</strong> Uses <code>eval()</code> function - Easy but not recommended for production</li>
+            <li><strong>Calculator 2 (Advanced):</strong> Manual calculation without <code>eval()</code> - Safer and more control</li>
+            <li><strong>Both support keyboard:</strong> Type numbers and operators, press <code>Enter</code> or <code>=</code> to calculate</li>
+            <li><strong>Clear:</strong> Press <code>C</code> or <code>Escape</code></li>
+            <li><strong>Delete:</strong> Press <code>Backspace</code></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <!-- Calculator 1: Simple with eval() -->
+        <div class="calculator">
+            <h2>Calculator 1: Simple (eval)</h2>
+            <input type="text" class="display" id="display1" readonly>
+            <div class="buttons">
+                <button class="btn-clear" onclick="clearDisplay1()">C</button>
+                <button class="btn-delete" onclick="deleteDisplay1()">←</button>
+                <button class="btn-operator" onclick="appendDisplay1('/')">/</button>
+                <button class="btn-operator" onclick="appendDisplay1('*')">×</button>
+                
+                <button class="btn-number" onclick="appendDisplay1('7')">7</button>
+                <button class="btn-number" onclick="appendDisplay1('8')">8</button>
+                <button class="btn-number" onclick="appendDisplay1('9')">9</button>
+                <button class="btn-operator" onclick="appendDisplay1('-')">-</button>
+                
+                <button class="btn-number" onclick="appendDisplay1('4')">4</button>
+                <button class="btn-number" onclick="appendDisplay1('5')">5</button>
+                <button class="btn-number" onclick="appendDisplay1('6')">6</button>
+                <button class="btn-operator" onclick="appendDisplay1('+')">+</button>
+                
+                <button class="btn-number" onclick="appendDisplay1('1')">1</button>
+                <button class="btn-number" onclick="appendDisplay1('2')">2</button>
+                <button class="btn-number" onclick="appendDisplay1('3')">3</button>
+                
+                <button class="btn-number btn-zero" onclick="appendDisplay1('0')">0</button>
+                <button class="btn-number" onclick="appendDisplay1('.')">.</button>
+                
+                <button class="btn-equals" onclick="calculate1()" style="grid-column: span 4;">=</button>
+            </div>
+        </div>
+
+        <!-- Calculator 2: Advanced without eval() -->
+        <div class="calculator">
+            <h2>Calculator 2: Advanced (no eval)</h2>
+            <input type="text" class="display" id="display2" readonly>
+            <div class="buttons">
+                <button class="btn-clear" id="clear2">C</button>
+                <button class="btn-delete" id="delete2">←</button>
+                <button class="btn-operator" data-operator="/">÷</button>
+                <button class="btn-operator" data-operator="*">×</button>
+                
+                <button class="btn-number" data-number="7">7</button>
+                <button class="btn-number" data-number="8">8</button>
+                <button class="btn-number" data-number="9">9</button>
+                <button class="btn-operator" data-operator="-">-</button>
+                
+                <button class="btn-number" data-number="4">4</button>
+                <button class="btn-number" data-number="5">5</button>
+                <button class="btn-number" data-number="6">6</button>
+                <button class="btn-operator" data-operator="+">+</button>
+                
+                <button class="btn-number" data-number="1">1</button>
+                <button class="btn-number" data-number="2">2</button>
+                <button class="btn-number" data-number="3">3</button>
+                
+                <button class="btn-number btn-zero" data-number="0">0</button>
+                <button class="btn-number" data-number=".">.</button>
+                
+                <button class="btn-equals" id="equals2" style="grid-column: span 4;">=</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ========================================
+        // CALCULATOR 1: Simple with eval()
+        // ========================================
+        const display1 = document.getElementById('display1');
+
+        function appendDisplay1(value) {
+            if(value === '*') {
+                display1.value += '*';
+            } else {
+                display1.value += value;
+            }
+            console.log('Display 1:', display1.value);
+        }
+
+        function clearDisplay1() {
+            display1.value = '';
+            console.log('Calculator 1 cleared');
+        }
+
+        function deleteDisplay1() {
+            display1.value = display1.value.slice(0, -1);
+            console.log('Display 1:', display1.value);
+        }
+
+        function calculate1() {
+            try {
+                const result = eval(display1.value);
+                display1.value = result;
+                console.log('Result:', result);
+            } catch(error) {
+                display1.value = 'Error';
+                setTimeout(() => {
+                    clearDisplay1();
+                }, 1500);
+                console.log('Error in calculation');
+            }
+        }
+
+        // ========================================
+        // CALCULATOR 2: Advanced without eval()
+        // ========================================
+        const display2 = document.getElementById('display2');
+        let currentValue = '';
+        let previousValue = '';
+        let operator = '';
+
+        // Select all buttons
+        const numberButtons2 = document.querySelectorAll('[data-number]');
+        const operatorButtons2 = document.querySelectorAll('[data-operator]');
+        const clear2 = document.getElementById('clear2');
+        const delete2 = document.getElementById('delete2');
+        const equals2 = document.getElementById('equals2');
+
+        // Add event listeners to number buttons
+        numberButtons2.forEach(button => {
+            button.addEventListener('click', () => {
+                appendNumber(button.dataset.number);
+            });
+        });
+
+        // Add event listeners to operator buttons
+        operatorButtons2.forEach(button => {
+            button.addEventListener('click', () => {
+                setOperator(button.dataset.operator);
+            });
+        });
+
+        // Clear button
+        clear2.addEventListener('click', () => {
+            clearCalculator();
+        });
+
+        // Delete button
+        delete2.addEventListener('click', () => {
+            deleteLastChar();
+        });
+
+        // Equals button
+        equals2.addEventListener('click', () => {
+            calculate();
+        });
+
+        // Functions for Calculator 2
+        function appendNumber(num) {
+            if(num === '.' && currentValue.includes('.')) {
+                return; // Don't allow multiple decimals
+            }
+            currentValue += num;
+            updateDisplay();
+        }
+
+        function setOperator(op) {
+            if(currentValue === '') return;
+            
+            if(previousValue !== '') {
+                calculate();
+            }
+            
+            operator = op;
+            previousValue = currentValue;
+            currentValue = '';
+            console.log(`Operation: ${previousValue} ${operator}`);
+        }
+
+        function calculate() {
+            let result;
+            const prev = parseFloat(previousValue);
+            const current = parseFloat(currentValue);
+            
+            if(isNaN(prev) || isNaN(current)) {
+                return;
+            }
+            
+            switch(operator) {
+                case '+':
+                    result = prev + current;
+                    break;
+                case '-':
+                    result = prev - current;
+                    break;
+                case '*':
+                    result = prev * current;
+                    break;
+                case '/':
+                    if(current === 0) {
+                        currentValue = 'Error: Div by 0';
+                        previousValue = '';
+                        operator = '';
+                        updateDisplay();
+                        setTimeout(clearCalculator, 2000);
+                        return;
+                    }
+                    result = prev / current;
+                    break;
+                default:
+                    return;
+            }
+            
+            console.log(`${prev} ${operator} ${current} = ${result}`);
+            
+            currentValue = result.toString();
+            operator = '';
+            previousValue = '';
+            updateDisplay();
+        }
+
+        function clearCalculator() {
+            currentValue = '';
+            previousValue = '';
+            operator = '';
+            updateDisplay();
+            console.log('Calculator 2 cleared');
+        }
+
+        function deleteLastChar() {
+            currentValue = currentValue.slice(0, -1);
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            display2.value = currentValue;
+        }
+
+        // ========================================
+        // KEYBOARD SUPPORT FOR BOTH CALCULATORS
+        // ========================================
+        document.addEventListener('keydown', (e) => {
+            // For Calculator 1
+            if(document.activeElement === display1 || e.target.tagName !== 'INPUT') {
+                if(e.key >= '0' && e.key <= '9') {
+                    appendDisplay1(e.key);
+                }
+                
+                if(e.key === '+' || e.key === '-' || e.key === '*' || e.key === '/') {
+                    appendDisplay1(e.key);
+                }
+                
+                if(e.key === '.') {
+                    appendDisplay1('.');
+                }
+                
+                if(e.key === 'Enter' || e.key === '=') {
+                    e.preventDefault();
+                    calculate1();
+                }
+                
+                if(e.key === 'Backspace') {
+                    deleteDisplay1();
+                }
+                
+                if(e.key === 'Escape' || e.key === 'c' || e.key === 'C') {
+                    clearDisplay1();
+                }
+            }
+            
+            // For Calculator 2
+            if(document.activeElement === display2 || e.target.tagName !== 'INPUT') {
+                if(e.key >= '0' && e.key <= '9') {
+                    appendNumber(e.key);
+                }
+                
+                if(e.key === '+' || e.key === '-' || e.key === '*' || e.key === '/') {
+                    setOperator(e.key);
+                }
+                
+                if(e.key === '.') {
+                    appendNumber('.');
+                }
+                
+                if(e.key === 'Enter' || e.key === '=') {
+                    e.preventDefault();
+                    calculate();
+                }
+                
+                if(e.key === 'Backspace') {
+                    deleteLastChar();
+                }
+                
+                if(e.key === 'Escape' || e.key === 'c' || e.key === 'C') {
+                    clearCalculator();
+                }
+            }
+        });
+
+        console.log('Calculators loaded! Try using keyboard to input numbers.');
+        console.log('Keyboard shortcuts:');
+        console.log('- Numbers: 0-9');
+        console.log('- Operators: + - * /');
+        console.log('- Calculate: Enter or =');
+        console.log('- Clear: Escape or C');
+        console.log('- Delete: Backspace');
+    </script>
+</body>
+</html>

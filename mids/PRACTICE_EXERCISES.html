@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Practice Exercises</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .exercise {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        input[type="text"] {
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 300px;
+        }
+        
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        
+        .item {
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .item:hover {
+            background-color: #d0d0d0;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        .panel {
+            padding: 20px;
+            margin: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .panel.active {
+            background-color: #4CAF50;
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .todo-item {
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #fff;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .completed {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+        
+        #counter {
+            font-size: 24px;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎯 DOM Practice Exercises - Try Yourself!</h1>
+    <p>Open the browser console (F12) to see logs. Try to complete each exercise!</p>
+
+    <!-- Exercise 1: Change Text Content -->
+    <div class="exercise">
+        <h2>Exercise 1: Change Text Content</h2>
+        <p id="text1">Original Text</p>
+        <button id="changeTextBtn">Change Text</button>
+        <p><strong>Task:</strong> Make the button change the paragraph text to "Text Changed!"</p>
+        <details>
+            <summary>Show Solution</summary>
+            <pre>
+const btn = document.querySelector('#changeTextBtn');
+const text = document.querySelector('#text1');
+
+btn.addEventListener('click', () => {
+    text.textContent = 'Text Changed!';
+});
+            </pre>
+        </details>
+    </div>
+
+    <!-- Exercise 2: Change Styles -->
+    <div class="exercise">
+        <h2>Exercise 2: Change Styles</h2>
+        <div class="box" id="box1">Click the button!</div>
+        <button id="changeColorBtn">Change Color</button>
+        <p><strong>Task:</strong> Make the box turn red with white text when button is clicked</p>
+        <details>
+            <summary>Show Solution</summary>
+            <pre>
+const btn = document.querySelector('#changeColorBtn');
+const box = document.querySelector('#box1');
+
+btn.addEventListener('click', () => {
+    box.style.backgroundColor = 'red';
+    box.style.color = 'white';
+});
+            </pre>
+        </details>
+    </div>
+
+    <!-- Exercise 3: Toggle Visibility -->
+    <div class="exercise">
+        <h2>Exercise 3: Toggle Visibility</h2>
+        <div class="box" id="box2">Now you see me!</div>
+        <button id="toggleBtn">Toggle Box</button>
+        <p><strong>Task:</strong> Make the button show/hide the box</p>
+        <details>
+            <summary>Show Solution</summary>
+            <pre>
+const btn = document.querySelector('#toggleBtn');
+const box = document.querySelector('#box2');
+
+btn.addEventListener('click', () => {
+    box.classList.toggle('hidden');
+});
+            </pre>
+        </details>
+    </div>
+
+    <!-- Exercise 4: Input Counter -->
+    <div class="exercise">
+        <h2>Exercise 4: Input Counter</h2>
+        <input type="text" id="textInput" placeholder="Type something...">
+        <p>Character count: <span id="counter">0</span></p>
+        <p><strong>Task:</strong> Show how many characters are typed in the input</p>
+        <details>
+            <summary>Show Solution</summary>
+            <pre>
+const input = document.querySelector('#textInput');
+const counter = document.querySelector('#counter');
+
+input.addEventListener('input', () => {
+    counter.textContent = input.value.length;
+});
+            </pre>
+        </details>
+    </div>
+
+    <!-- Exercise 5: Add Items to List -->
+    <div class="exercise">
+        <h2>Exercise 5: Add Items to List</h2>
+        <input type="text" id="itemInput" placeholder="Enter item name">
+        <button id="addItemBtn">Add Item</button>
+        <div id="itemList"></div>
+        <p><strong>Task:</strong> Add new items to the list when button is clicked</p>
+        <details>
+            <summary>Show Solution</summary>
+            <pre>
+const input = document.querySelector('#itemInput');
+const btn = document.querySelector('#addItemBtn');
+const list = document.querySelector('#itemList');
+
+btn.addEventListener('click', () => {
+    const text = input.value.trim();
+    
+    if(text !== '') {
+        const item = document.createElement('div');
+        item.className = 'item';
+        item.textContent = text;
+        list.appendChild(item);
+        input.value = '';
+    }
+});
+            </pre>
+        </details>
+    </div>
+
+    <!-- Exercise 6: Click to Remove -->
+    <div class="exercise">
+        <h2>Exercise 6: Click to Remove Items</h2>
+        <div id="removeList">
+            <div class="item">Click me to remove - Item 1</div>
+            <div class="item">Click me to remove - Item 2</div>
+            <div class="item">Click me to remove - Item 3</div>
+        </div>
+        <p><strong>Task:</strong> Remove an item when it's clicked</p>
+        <details>
+            <summary>Show Solution</summary>
+            <pre>
+const items = document.querySelectorAll('#removeList .item');
+
+items.forEach(item => {
+    item.addEventListener('click', () => {
+        item.remove();
+    });
+});
+            </pre>
+        </details>
+    </div>
+
+    <!-- Exercise 7: Active Panel Toggle -->
+    <div class="exercise">
+        <h2>Exercise 7: Active Panel Toggle</h2>
+        <div id="panels">
+            <div class="panel">Panel 1</div>
+            <div class="panel">Panel 2</div>
+            <div class="panel">Panel 3</div>
+        </div>
+        <p><strong>Task:</strong> Only one panel should be active at a time when clicked</p>
+        <details>
+            <summary>Show Solution</summary>
+            <pre>
+const panels = document.querySelectorAll('.panel');
+
+panels.forEach(panel => {
+    panel.addEventListener('click', () => {
+        // Remove active from all
+        panels.forEach(p => p.classList.remove('active'));
+        // Add active to clicked one
+        panel.classList.add('active');
+    });
+});
+            </pre>
+        </details>
+    </div>
+
+    <!-- Exercise 8: Todo List with Complete -->
+    <div class="exercise">
+        <h2>Exercise 8: Todo List (Add & Complete)</h2>
+        <input type="text" id="todoInput" placeholder="Enter todo...">
+        <button id="addTodoBtn">Add Todo</button>
+        <div id="todoList"></div>
+        <p><strong>Task:</strong> Add todos and click them to mark as completed</p>
+        <details>
+            <summary>Show Solution</summary>
+            <pre>
+const input = document.querySelector('#todoInput');
+const btn = document.querySelector('#addTodoBtn');
+const list = document.querySelector('#todoList');
+
+btn.addEventListener('click', () => {
+    const text = input.value.trim();
+    
+    if(text !== '') {
+        const todo = document.createElement('div');
+        todo.className = 'todo-item';
+        todo.textContent = text;
+        
+        // Click to toggle completed
+        todo.addEventListener('click', () => {
+            todo.classList.toggle('completed');
+        });
+        
+        list.appendChild(todo);
+        input.value = '';
+    }
+});
+            </pre>
+        </details>
+    </div>
+
+    <!-- Exercise 9: Keyboard Event -->
+    <div class="exercise">
+        <h2>Exercise 9: Keyboard Event</h2>
+        <p>Press any key on your keyboard</p>
+        <div id="keyDisplay" style="padding: 20px; background: #f0f0f0; border-radius: 5px; text-align: center;">
+            <p>Press a key to see its code</p>
+        </div>
+        <p><strong>Task:</strong> Display the key pressed and its code</p>
+        <details>
+            <summary>Show Solution</summary>
+            <pre>
+const display = document.querySelector('#keyDisplay');
+
+window.addEventListener('keydown', (e) => {
+    display.innerHTML = `
+        &lt;h3&gt;Key: ${e.key}&lt;/h3&gt;
+        &lt;p&gt;Code: ${e.keyCode}&lt;/p&gt;
+        &lt;p&gt;Key Code: ${e.code}&lt;/p&gt;
+    `;
+});
+            </pre>
+        </details>
+    </div>
+
+    <!-- Exercise 10: Form Submit -->
+    <div class="exercise">
+        <h2>Exercise 10: Form Submit</h2>
+        <form id="myForm">
+            <input type="text" id="formInput" placeholder="Enter your name" required>
+            <button type="submit">Submit</button>
+        </form>
+        <p id="greeting"></p>
+        <p><strong>Task:</strong> Prevent page reload and show greeting with the name entered</p>
+        <details>
+            <summary>Show Solution</summary>
+            <pre>
+const form = document.querySelector('#myForm');
+const input = document.querySelector('#formInput');
+const greeting = document.querySelector('#greeting');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault(); // IMPORTANT!
+    
+    const name = input.value;
+    greeting.textContent = `Hello, ${name}!`;
+    greeting.style.color = '#4CAF50';
+    greeting.style.fontSize = '20px';
+    
+    input.value = '';
+});
+            </pre>
+        </details>
+    </div>
+
+    <div class="exercise">
+        <h2>✅ Practice Tips</h2>
+        <ul>
+            <li><strong>Try writing the code yourself first</strong> before looking at solutions</li>
+            <li><strong>Open browser console (F12)</strong> to see errors and logs</li>
+            <li><strong>Use console.log()</strong> to debug your code</li>
+            <li><strong>Start simple:</strong> Select → Event → Action</li>
+            <li><strong>Test each exercise</strong> to make sure it works</li>
+        </ul>
+    </div>
+
+    <!-- Include your practice script here -->
+    <script src="practice.js"></script>
+</body>
+</html>
