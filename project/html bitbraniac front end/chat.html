@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat - BitBrainiac</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">BitBrainiac</span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="chat.html" class="active">Chat</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Chat Container -->
+    <section class="chat-section">
+        <div class="container">
+            <div class="chat-container">
+                <div class="chat-header">
+                    <div class="chat-header-content">
+                        <div class="chat-avatar">🤖</div>
+                        <div class="chat-header-text">
+                            <h3>BitBrainiac AI</h3>
+                            <p class="chat-status">
+                                <span class="status-dot"></span>
+                                Online
+                            </p>
+                        </div>
+                    </div>
+                    <button class="clear-chat-btn" id="clearChatBtn" title="Clear Chat">🗑️</button>
+                </div>
+
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message bot-message">
+                        <div class="message-avatar">🤖</div>
+                        <div class="message-content">
+                            <p>Hello! I'm BitBrainiac, your AI Computer Science tutor. How can I help you today?</p>
+                            <span class="message-time"></span>
+                        </div>
+                    </div>
+                    <div class="suggestions">
+                        <p>Try asking about:</p>
+                        <div class="suggestion-chips">
+                            <button class="suggestion-chip" data-question="What is a linked list?">What is a linked list?</button>
+                            <button class="suggestion-chip" data-question="Explain binary search">Explain binary search</button>
+                            <button class="suggestion-chip" data-question="How does recursion work?">How does recursion work?</button>
+                            <button class="suggestion-chip" data-question="What is OOP?">What is OOP?</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-input-container">
+                    <form id="chatForm" class="chat-form">
+                        <input 
+                            type="text" 
+                            id="chatInput" 
+                            class="chat-input" 
+                            placeholder="Ask me anything about Computer Science..."
+                            autocomplete="off"
+                            required
+                        >
+                        <button type="submit" class="send-btn" id="sendBtn">
+                            <span class="send-icon">➤</span>
+                        </button>
+                    </form>
+                    <div class="typing-indicator" id="typingIndicator" style="display: none;">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Topics Sidebar -->
+            <div class="quick-topics">
+                <h3>Quick Topics</h3>
+                <div class="topic-list">
+                    <button class="topic-btn" data-topic="data-structures">📊 Data Structures</button>
+                    <button class="topic-btn" data-topic="algorithms">⚙️ Algorithms</button>
+                    <button class="topic-btn" data-topic="programming">💻 Programming</button>
+                    <button class="topic-btn" data-topic="web-dev">🌐 Web Development</button>
+                    <button class="topic-btn" data-topic="databases">💾 Databases</button>
+                    <button class="topic-btn" data-topic="networking">🔗 Networking</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>BitBrainiac</h3>
+                    <p>Your trusted AI tutor for mastering computer science concepts.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="chat.html">Chat</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: support@bitbrainiac.com</p>
+                    <p>Available 24/7</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 BitBrainiac. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
