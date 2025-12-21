@@ -1,124 +1,164 @@
-import './About.css';
+import { useEffect, useState } from 'react';
 
 function About() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  const team = [
+    {
+      name: 'Sarah Chen',
+      role: 'Founder & CEO',
+      bio: 'Ex-Google engineer with a passion for education',
+      avatar: '👩‍💻',
+      color: 'bg-purple-500',
+    },
+    {
+      name: 'Alex Kumar',
+      role: 'CTO',
+      bio: 'AI researcher from Stanford, loves building cool stuff',
+      avatar: '👨‍🔬',
+      color: 'bg-cyan-500',
+    },
+    {
+      name: 'Maya Johnson',
+      role: 'Head of Education',
+      bio: 'Former CS professor who makes learning fun',
+      avatar: '👩‍🏫',
+      color: 'bg-orange-500',
+    },
+    {
+      name: 'Jordan Lee',
+      role: 'Lead Developer',
+      bio: 'Full-stack wizard, coffee enthusiast',
+      avatar: '🧙‍♂️',
+      color: 'bg-green-500',
+    },
+  ];
+
+  const values = [
+    {
+      icon: '❤️',
+      title: 'Learning with Love',
+      description: 'We believe education should be fun, not painful.',
+    },
+    {
+      icon: '🌟',
+      title: 'Always Accessible',
+      description: 'Quality education shouldn\'t cost a fortune.',
+    },
+    {
+      icon: '⚡',
+      title: 'Powered by Innovation',
+      description: 'Cutting-edge AI for personalized learning.',
+    },
+  ];
+
   return (
-    <div className="about-page">
-      <section className="about-hero">
-        <div className="container">
-          <h1 className="page-title">About Bit-Brainiac</h1>
-          <p className="page-subtitle">
-            Empowering the next generation of developers with AI-powered learning
+    <div className="min-h-screen bg-[#0a0a0f]">
+      {/* Hero Section */}
+      <section className="relative pt-12 pb-20 overflow-hidden">
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-purple-600/15 rounded-full blur-[150px]"></div>
+
+        <div className={`relative z-10 max-w-4xl mx-auto px-6 text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8">
+            <span className="text-xl">✨</span>
+            <span className="text-sm text-gray-300">Our Story</span>
+          </div>
+
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+            <span className="text-white block">We're Building the</span>
+            <span className="gradient-text block mt-2">Future of Learning</span>
+          </h1>
+
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            Started in a dorm room by CS students who were tired of confusing textbooks 
+            and boring lectures. We knew there had to be a better way. So we built it. 🚀
           </p>
         </div>
       </section>
 
-      <section className="mission-section">
-        <div className="container">
-          <div className="content-grid">
-            <div className="content-block">
-              <div className="icon-wrapper">
-                <span className="icon">🎯</span>
-              </div>
-              <h2>Our Mission</h2>
-              <p>
-                To democratize computer science education by providing accessible, 
-                AI-powered learning experiences that adapt to each student's unique 
-                learning style and pace.
+      {/* Mission Section */}
+      <section className="py-20 bg-[#0d0d14] border-y border-white/5">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                <span className="text-white">Our </span>
+                <span className="gradient-text">Mission</span>
+              </h2>
+              <p className="text-gray-400 leading-relaxed mb-4">
+                We're on a mission to make computer science education accessible to everyone. 
+                No gatekeeping, no judgment – just pure learning vibes.
+              </p>
+              <p className="text-gray-400 leading-relaxed">
+                Whether you're a total beginner or a senior dev looking to level up, 
+                BitBrainiac is here to support your journey.
               </p>
             </div>
-            <div className="content-block">
-              <div className="icon-wrapper">
-                <span className="icon">👁️</span>
+            <div className="relative">
+              <div className="p-8 rounded-2xl bg-white/5 border border-white/10 text-center">
+                <div className="text-6xl mb-4">🎯</div>
+                <h3 className="text-2xl font-bold text-white mb-2">1 Million Learners</h3>
+                <p className="text-gray-400">Our goal by 2026. Will you be one of them?</p>
               </div>
-              <h2>Our Vision</h2>
-              <p>
-                A world where anyone, anywhere can master computer science concepts 
-                through personalized, interactive learning powered by cutting-edge AI technology.
-              </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="story-section">
-        <div className="container">
-          <h2 className="section-title">Our Story</h2>
-          <div className="story-content">
-            <p>
-              Bit-Brainiac was founded in 2024 by a team of passionate educators and 
-              engineers who recognized the challenges students face when learning computer 
-              science. Traditional learning methods often fail to provide the personalized 
-              support each student needs.
-            </p>
-            <p>
-              We combined our expertise in artificial intelligence, education, and software 
-              development to create an intelligent tutoring platform that adapts to each 
-              learner's needs, providing instant feedback and guidance 24/7.
-            </p>
-            <p>
-              Today, Bit-Brainiac serves thousands of students worldwide, helping them master 
-              everything from basic programming to advanced algorithms and data structures.
-            </p>
+      {/* Values Section */}
+      <section className="py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <span className="text-white">What We </span>
+              <span className="gradient-text">Stand For</span>
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {values.map((value, index) => (
+              <div 
+                key={index} 
+                className="p-6 rounded-2xl bg-white/[0.03] border border-white/10 text-center hover:border-purple-500/50 hover:-translate-y-2 transition-all duration-500"
+              >
+                <div className="text-4xl mb-4">{value.icon}</div>
+                <h3 className="text-xl font-semibold text-white mb-2">{value.title}</h3>
+                <p className="text-gray-400">{value.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="values-section">
-        <div className="container">
-          <h2 className="section-title">Our Values</h2>
-          <div className="values-grid">
-            <div className="value-card">
-              <span className="value-icon">💡</span>
-              <h3>Innovation</h3>
-              <p>Constantly pushing the boundaries of educational technology</p>
-            </div>
-            <div className="value-card">
-              <span className="value-icon">🤝</span>
-              <h3>Accessibility</h3>
-              <p>Making quality education available to everyone, everywhere</p>
-            </div>
-            <div className="value-card">
-              <span className="value-icon">⚡</span>
-              <h3>Excellence</h3>
-              <p>Delivering the highest quality learning experiences</p>
-            </div>
-            <div className="value-card">
-              <span className="value-icon">🌱</span>
-              <h3>Growth</h3>
-              <p>Supporting continuous learning and personal development</p>
-            </div>
+      {/* Team Section */}
+      <section className="py-20 bg-[#0d0d14] border-y border-white/5">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <span className="text-white">Meet the </span>
+              <span className="gradient-text">Team</span>
+            </h2>
+            <p className="text-gray-400">The humans behind the AI magic ✨</p>
           </div>
-        </div>
-      </section>
 
-      <section className="team-section">
-        <div className="container">
-          <h2 className="section-title">Meet Our Team</h2>
-          <div className="team-grid">
-            <div className="team-member">
-              <div className="member-avatar">👨‍💻</div>
-              <h3>Alex Johnson</h3>
-              <p className="member-role">Co-Founder & CEO</p>
-              <p className="member-bio">Former Google engineer passionate about education</p>
-            </div>
-            <div className="team-member">
-              <div className="member-avatar">👩‍🏫</div>
-              <h3>Sarah Chen</h3>
-              <p className="member-role">Head of Education</p>
-              <p className="member-bio">PhD in Computer Science Education</p>
-            </div>
-            <div className="team-member">
-              <div className="member-avatar">👨‍🔬</div>
-              <h3>Michael Lee</h3>
-              <p className="member-role">AI Research Lead</p>
-              <p className="member-bio">Specialized in adaptive learning systems</p>
-            </div>
-            <div className="team-member">
-              <div className="member-avatar">👩‍💼</div>
-              <h3>Emily Rodriguez</h3>
-              <p className="member-role">Product Manager</p>
-              <p className="member-bio">10+ years in EdTech product development</p>
-            </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {team.map((member, index) => (
+              <div 
+                key={index} 
+                className="group p-6 rounded-2xl bg-white/[0.03] border border-white/10 text-center hover:border-purple-500/50 hover:-translate-y-2 transition-all duration-500"
+              >
+                <div className={`w-16 h-16 mx-auto ${member.color} rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  {member.avatar}
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-1">{member.name}</h3>
+                <p className="text-purple-400 text-sm mb-2">{member.role}</p>
+                <p className="text-gray-400 text-sm">{member.bio}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
