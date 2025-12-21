@@ -9,9 +9,9 @@ import Chat from './pages/Chat';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-dark-900 flex flex-col">
+      <div className="min-h-screen bg-dark-900 flex flex-col overflow-x-hidden">
         <Navbar />
-        <main className="flex-1">
+        <main className="flex-1 overflow-x-hidden">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

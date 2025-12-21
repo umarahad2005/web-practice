@@ -1,17 +1,7 @@
-@import "tailwindcss";
+/* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
-@theme {
-  --color-dark-900: #0a0a0f;
-  --color-dark-800: #12121a;
-  --color-dark-700: #1a1a24;
-  --color-dark-600: #22222e;
-  --color-dark-500: #2a2a38;
-  
-  --font-family-sans: 'Inter', system-ui, sans-serif;
-  --font-family-display: 'Space Grotesk', sans-serif;
-}
-
+/* Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -20,6 +10,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -27,6 +18,13 @@ body {
   background-color: #0a0a0f;
   color: #f8fafc;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+#root {
+  overflow-x: hidden;
+  width: 100%;
 }
 
 ::selection {

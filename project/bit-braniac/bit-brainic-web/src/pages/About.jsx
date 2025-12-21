@@ -9,32 +9,18 @@ function About() {
 
   const team = [
     {
-      name: 'Sarah Chen',
-      role: 'Founder & CEO',
-      bio: 'Ex-Google engineer with a passion for education',
-      avatar: '👩‍💻',
+      name: 'Umar Ahad Uddin Ahmed Usmani',
+      role: 'Co-Founder & Developer',
+      bio: 'CS Student at Riphah International University, Lahore',
+      avatar: '👨‍💻',
       color: 'bg-purple-500',
     },
     {
-      name: 'Alex Kumar',
-      role: 'CTO',
-      bio: 'AI researcher from Stanford, loves building cool stuff',
-      avatar: '👨‍🔬',
+      name: 'Syed Hassan Raza',
+      role: 'Co-Founder & Developer',
+      bio: 'CS Student at Riphah International University, Lahore',
+      avatar: '👨‍💻',
       color: 'bg-cyan-500',
-    },
-    {
-      name: 'Maya Johnson',
-      role: 'Head of Education',
-      bio: 'Former CS professor who makes learning fun',
-      avatar: '👩‍🏫',
-      color: 'bg-orange-500',
-    },
-    {
-      name: 'Jordan Lee',
-      role: 'Lead Developer',
-      bio: 'Full-stack wizard, coffee enthusiast',
-      avatar: '🧙‍♂️',
-      color: 'bg-green-500',
     },
   ];
 
@@ -59,7 +45,7 @@ function About() {
   return (
     <div className="min-h-screen bg-[#0a0a0f]">
       {/* Hero Section */}
-      <section className="relative pt-12 pb-20 overflow-hidden">
+      <section className="relative pt-8 pb-20 overflow-hidden">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-purple-600/15 rounded-full blur-[150px]"></div>
 
         <div className={`relative z-10 max-w-4xl mx-auto px-6 text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
@@ -82,7 +68,7 @@ function About() {
 
       {/* Mission Section */}
       <section className="py-20 bg-[#0d0d14] border-y border-white/5">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-5xl mx-auto px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -111,7 +97,7 @@ function About() {
 
       {/* Values Section */}
       <section className="py-20">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-5xl mx-auto px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               <span className="text-white">What We </span>
@@ -136,27 +122,27 @@ function About() {
 
       {/* Team Section */}
       <section className="py-20 bg-[#0d0d14] border-y border-white/5">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-4xl mx-auto px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               <span className="text-white">Meet the </span>
               <span className="gradient-text">Team</span>
             </h2>
-            <p className="text-gray-400">The humans behind the AI magic ✨</p>
+            <p className="text-gray-400">Students from Riphah International University, Lahore 🎓</p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 gap-8 max-w-2xl mx-auto">
             {team.map((member, index) => (
               <div 
                 key={index} 
-                className="group p-6 rounded-2xl bg-white/[0.03] border border-white/10 text-center hover:border-purple-500/50 hover:-translate-y-2 transition-all duration-500"
+                className="group p-8 rounded-2xl bg-white/[0.03] border border-white/10 text-center hover:border-purple-500/50 hover:-translate-y-2 transition-all duration-500"
               >
-                <div className={`w-16 h-16 mx-auto ${member.color} rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`w-20 h-20 mx-auto ${member.color} rounded-2xl flex items-center justify-center text-4xl mb-5 group-hover:scale-110 transition-transform duration-300`}>
                   {member.avatar}
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-1">{member.name}</h3>
-                <p className="text-purple-400 text-sm mb-2">{member.role}</p>
-                <p className="text-gray-400 text-sm">{member.bio}</p>
+                <h3 className="text-xl font-semibold text-white mb-2">{member.name}</h3>
+                <p className="text-purple-400 text-sm mb-3">{member.role}</p>
+                <p className="text-gray-400">{member.bio}</p>
               </div>
             ))}
           </div>

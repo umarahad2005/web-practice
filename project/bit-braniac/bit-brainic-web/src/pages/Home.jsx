@@ -61,14 +61,14 @@ function Home() {
   return (
     <div className="min-h-screen bg-[#0a0a0f]">
       {/* Hero Section */}
-      <section className="relative min-h-[calc(100vh-5rem)] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6">
         {/* Background Effects */}
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[150px] animate-pulse"></div>
           <div className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] bg-pink-600/15 rounded-full blur-[120px] animate-pulse" style={{animationDelay: '1s'}}></div>
         </div>
 
-        <div className={`relative z-10 max-w-4xl mx-auto px-6 text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className={`relative z-10 w-full max-w-4xl mx-auto text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 animate-bounce" style={{animationDuration: '3s'}}>
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
@@ -115,13 +115,12 @@ function Home() {
 
       {/* Stats Section */}
       <section className="py-20 bg-[#0d0d14] border-y border-white/5">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="w-full max-w-6xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {stats.map((stat, index) => (
               <div 
                 key={index} 
-                className="text-center group cursor-default"
-                style={{animationDelay: `${index * 0.1}s`}}
+                className="group cursor-default"
               >
                 <div className="text-4xl md:text-5xl font-bold gradient-text mb-2 group-hover:scale-110 transition-transform duration-300">{stat.value}</div>
                 <div className="text-gray-400 text-sm md:text-base">{stat.label}</div>
@@ -132,8 +131,8 @@ function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-24">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-24 w-full flex justify-center">
+        <div className="w-full max-w-5xl px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="text-white">Why </span>
@@ -144,18 +143,21 @@ function Home() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 place-items-center">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="group p-6 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-purple-500/50 hover:bg-white/[0.05] transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-purple-500/10"
-                style={{animationDelay: `${index * 0.1}s`}}
+                className="group w-full p-8 min-h-[160px] rounded-3xl bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/10 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 hover:-translate-y-1 flex items-center justify-center"
               >
-                <div className={`w-12 h-12 ${feature.color} rounded-xl flex items-center justify-center text-white mb-5 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
-                  {feature.icon}
+                <div className="flex items-center gap-6">
+                  <div className={`w-14 h-14 ${feature.color} rounded-2xl flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                    {feature.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>
+                    <p className="text-gray-400 leading-relaxed">{feature.description}</p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
-                <p className="text-gray-400 leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -163,11 +165,11 @@ function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 relative overflow-hidden">
+      <section className="py-24 relative overflow-hidden w-full flex justify-center">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 via-pink-600/10 to-cyan-600/10"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[150px]"></div>
         
-        <div className="relative max-w-3xl mx-auto px-6 text-center">
+        <div className="relative w-full max-w-3xl px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-white">Ready to </span>
             <span className="gradient-text">Level Up?</span>

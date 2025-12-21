@@ -42,8 +42,7 @@ function Navbar() {
   const navLinks = [
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
-    { path: '/contact', label: 'Contact' },
-    { path: '/chat', label: 'Chat' }
+    { path: '/contact', label: 'Contact' }
   ];
 
   const isActive = (path) => location.pathname === path;

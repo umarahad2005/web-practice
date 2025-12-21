@@ -65,7 +65,7 @@ function Chat() {
 
   return (
     <div className="min-h-screen bg-[#0a0a0f] pb-4">
-      <div className="max-w-4xl mx-auto px-6 h-[calc(100vh-7rem)] flex flex-col">
+      <div className="max-w-4xl mx-auto px-6 h-[calc(100vh-5rem)] flex flex-col">
         {/* Header */}
         <div className="py-4 border-b border-white/10 flex-shrink-0">
           <div className="flex items-center gap-3">

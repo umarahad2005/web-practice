@@ -34,19 +34,22 @@ function Contact() {
     {
       icon: '📧',
       title: 'Email Us',
-      value: 'hello@bitbrainiac.com',
+      value: 'umarahadusmani@gmail.com',
+      link: 'mailto:umarahadusmani@gmail.com',
       color: 'bg-purple-500',
     },
     {
-      icon: '📍',
-      title: 'Visit Us',
-      value: 'San Francisco, CA',
+      icon: '📞',
+      title: 'Call Us',
+      value: '+92 333 4739757',
+      link: 'tel:+923334739757',
       color: 'bg-pink-500',
     },
     {
-      icon: '💬',
-      title: 'Chat Support',
-      value: 'Available 24/7',
+      icon: '📍',
+      title: 'Location',
+      value: 'Riphah International University, Lahore',
+      link: '#',
       color: 'bg-cyan-500',
     },
   ];
@@ -73,7 +76,7 @@ function Contact() {
   return (
     <div className="min-h-screen bg-[#0a0a0f]">
       {/* Hero Section */}
-      <section className="relative pt-12 pb-16 overflow-hidden">
+      <section className="relative pt-8 pb-16 overflow-hidden">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-purple-600/15 rounded-full blur-[150px]"></div>
 
         <div className={`relative z-10 max-w-4xl mx-auto px-6 text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
@@ -96,7 +99,7 @@ function Contact() {
 
       {/* Contact Info Cards */}
       <section className="py-8">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-5xl mx-auto px-8">
           <div className="grid md:grid-cols-3 gap-6">
             {contactInfo.map((info, index) => (
               <div 
@@ -118,7 +121,7 @@ function Contact() {
 
       {/* Contact Form & FAQ */}
       <section className="py-16">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-5xl mx-auto px-8">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div>
