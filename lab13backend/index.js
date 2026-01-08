@@ -19,7 +19,6 @@ mongoose.connect('mongodb+srv://umarahadusmani_db_user:HdPXqOQ2Aa03P7qY@webpract
 
 const usermodel = mongoose.model('User', userSchema); 
 
-// GET all users
 app.get('/users', async (req, res) => {
     try {
         const users = await usermodel.find({});
@@ -29,7 +28,6 @@ app.get('/users', async (req, res) => {
     }
 });
 
-// POST create new user
 app.post('/users', async (req, res) => {
     try {
         const { name, email, age } = req.body;
@@ -40,7 +38,6 @@ app.post('/users', async (req, res) => {
     }
 });
 
-// PUT update user by ID
 app.put('/users/:id', async (req, res) => {
     try {
         const { name, email, age } = req.body;
@@ -58,7 +55,6 @@ app.put('/users/:id', async (req, res) => {
     }
 });
 
-// DELETE user by ID
 app.delete('/users/:id', async (req, res) => {
     try {
         const deletedUser = await usermodel.findByIdAndDelete(req.params.id);
