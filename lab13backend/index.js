@@ -1,16 +1,9 @@
 const express = require('express');
-const mongoose = require('mongoose');
+import connection from './db/connection';
 
 const app = express();
 app.use(express.json());
-
-mongoose.connect('mongodb+srv://umarahadusmani_db_user:HdPXqOQ2Aa03P7qY@webpractice.3zg1b4d.mongodb.net/ahadusmani_db')
-    .then(() => {
-        console.log(' MongoDB connected successfully!');
-    })
-    .catch((err) => {
-        console.error('MongoDB connection error:', err.message);
-    });
+connection();
     const userSchema = new mongoose.Schema({
         name: String,
         email: String,

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generator - Lab 8</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="quote-card">
+            <div class="quote-icon">"</div>
+
+            <blockquote id="quoteText" class="quote-text">
+                Click the button to generate an inspiring quote!
+            </blockquote>
+
+            <p class="quote-author" id="quoteAuthor">— Anonymous</p>
+
+            <div class="btn-group">
+                <button class="btn primary" id="newQuoteBtn">
+                    <span>✨</span> New Quote
+                </button>
+                <button class="btn secondary" id="copyBtn">
+                    <span>📋</span> Copy
+                </button>
+                <button class="btn secondary" id="tweetBtn">
+                    <span>🐦</span> Tweet
+                </button>
+            </div>
+
+            <!-- Toast notification -->
+            <div class="toast" id="toast">Copied to clipboard!</div>
+        </div>
+
+        <p class="footer-text">💡 Lab 8 - JavaScript Quote Generator</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

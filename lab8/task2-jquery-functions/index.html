@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Functions Demo - Lab 8</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🎨 jQuery Functions Demo</h1>
+            <p>Interactive demonstration of 15 jQuery functions</p>
+        </header>
+
+        <!-- Section 1: FadeIn / FadeOut -->
+        <section class="demo-section">
+            <h2>1. fadeIn() & fadeOut()</h2>
+            <p>Gradually changes the opacity of elements</p>
+            <div class="demo-box">
+                <div class="demo-element" id="fadeBox">
+                    <span>Fade Me!</span>
+                </div>
+                <div class="btn-group">
+                    <button class="btn" id="fadeInBtn">fadeIn()</button>
+                    <button class="btn" id="fadeOutBtn">fadeOut()</button>
+                    <button class="btn" id="fadeToggleBtn">fadeToggle()</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Hide / Show -->
+        <section class="demo-section">
+            <h2>2. hide() & show()</h2>
+            <p>Instantly hides or shows elements</p>
+            <div class="demo-box">
+                <div class="demo-element" id="hideBox">
+                    <span>Hide/Show Me!</span>
+                </div>
+                <div class="btn-group">
+                    <button class="btn" id="hideBtn">hide()</button>
+                    <button class="btn" id="showBtn">show()</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Toggle -->
+        <section class="demo-section">
+            <h2>3. toggle()</h2>
+            <p>Toggles between hide and show</p>
+            <div class="demo-box">
+                <div class="demo-element" id="toggleBox">
+                    <span>Toggle Me!</span>
+                </div>
+                <div class="btn-group">
+                    <button class="btn" id="toggleBtn">toggle()</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: SlideUp / SlideDown / SlideToggle -->
+        <section class="demo-section">
+            <h2>4. slideUp() / slideDown() / slideToggle()</h2>
+            <p>Slides elements up, down, or toggles</p>
+            <div class="demo-box">
+                <div class="demo-element slide-box" id="slideBox">
+                    <span>Slide Me!</span>
+                </div>
+                <div class="btn-group">
+                    <button class="btn" id="slideUpBtn">slideUp()</button>
+                    <button class="btn" id="slideDownBtn">slideDown()</button>
+                    <button class="btn" id="slideToggleBtn">slideToggle()</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Animate -->
+        <section class="demo-section">
+            <h2>5. animate()</h2>
+            <p>Creates custom animations</p>
+            <div class="demo-box animate-container">
+                <div class="demo-element animate-box" id="animateBox">
+                    <span>Animate!</span>
+                </div>
+                <div class="btn-group">
+                    <button class="btn" id="animateLeftBtn">Move Left</button>
+                    <button class="btn" id="animateRightBtn">Move Right</button>
+                    <button class="btn" id="animateGrowBtn">Grow</button>
+                    <button class="btn" id="animateResetBtn">Reset</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: addClass / removeClass / toggleClass -->
+        <section class="demo-section">
+            <h2>6. addClass() / removeClass() / toggleClass()</h2>
+            <p>Manipulates CSS classes</p>
+            <div class="demo-box">
+                <div class="demo-element class-box" id="classBox">
+                    <span>Change My Class!</span>
+                </div>
+                <div class="btn-group">
+                    <button class="btn" id="addClassBtn">addClass()</button>
+                    <button class="btn" id="removeClassBtn">removeClass()</button>
+                    <button class="btn" id="toggleClassBtn">toggleClass()</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: css() -->
+        <section class="demo-section">
+            <h2>7. css()</h2>
+            <p>Gets or sets CSS properties</p>
+            <div class="demo-box">
+                <div class="demo-element" id="cssBox">
+                    <span>Style Me!</span>
+                </div>
+                <div class="btn-group">
+                    <button class="btn" id="cssRedBtn">Red</button>
+                    <button class="btn" id="cssBlueBtn">Blue</button>
+                    <button class="btn" id="cssGreenBtn">Green</button>
+                    <button class="btn" id="cssPurpleBtn">Purple</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 8: text() / html() / val() -->
+        <section class="demo-section">
+            <h2>8. text() / html() / val()</h2>
+            <p>Gets or sets content</p>
+            <div class="demo-box">
+                <div class="demo-element text-box" id="textBox">
+                    <p id="contentDisplay">Original Text Content</p>
+                </div>
+                <input type="text" id="inputVal" class="input-field" placeholder="Type something...">
+                <div class="btn-group">
+                    <button class="btn" id="setTextBtn">text()</button>
+                    <button class="btn" id="setHtmlBtn">html()</button>
+                    <button class="btn" id="getValBtn">val()</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 9: attr() -->
+        <section class="demo-section">
+            <h2>9. attr()</h2>
+            <p>Gets or sets attributes</p>
+            <div class="demo-box">
+                <a href="https://google.com" id="attrLink" target="_blank" class="demo-link">Click me (Google)</a>
+                <div class="btn-group">
+                    <button class="btn" id="attrGoogleBtn">Google</button>
+                    <button class="btn" id="attrGithubBtn">GitHub</button>
+                    <button class="btn" id="attrYoutubeBtn">YouTube</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 10: append() / prepend() -->
+        <section class="demo-section">
+            <h2>10. append() / prepend()</h2>
+            <p>Inserts content at the end or beginning</p>
+            <div class="demo-box">
+                <ul id="appendList" class="demo-list">
+                    <li>Original Item</li>
+                </ul>
+                <div class="btn-group">
+                    <button class="btn" id="appendBtn">append()</button>
+                    <button class="btn" id="prependBtn">prepend()</button>
+                    <button class="btn" id="clearListBtn">Clear List</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 11: on() Event Handling -->
+        <section class="demo-section">
+            <h2>11. on() - Event Handling</h2>
+            <p>Attaches event handlers</p>
+            <div class="demo-box">
+                <div class="demo-element event-box" id="eventBox">
+                    <span>Hover & Click Me!</span>
+                </div>
+                <p class="event-log" id="eventLog">Event log will appear here...</p>
+            </div>
+        </section>
+
+        <!-- Section 12: delay() -->
+        <section class="demo-section">
+            <h2>12. delay()</h2>
+            <p>Delays execution of subsequent queue items</p>
+            <div class="demo-box">
+                <div class="demo-element" id="delayBox">
+                    <span>Delayed Animation!</span>
+                </div>
+                <div class="btn-group">
+                    <button class="btn" id="delayBtn">Run with delay()</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 13: stop() -->
+        <section class="demo-section">
+            <h2>13. stop()</h2>
+            <p>Stops currently running animations</p>
+            <div class="demo-box animate-container">
+                <div class="demo-element animate-box" id="stopBox">
+                    <span>Stop Me!</span>
+                </div>
+                <div class="btn-group">
+                    <button class="btn" id="startAnimBtn">Start Animation</button>
+                    <button class="btn" id="stopAnimBtn">stop()</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 14: each() -->
+        <section class="demo-section">
+            <h2>14. each()</h2>
+            <p>Iterates over a collection</p>
+            <div class="demo-box">
+                <div class="each-container">
+                    <div class="each-item">Item 1</div>
+                    <div class="each-item">Item 2</div>
+                    <div class="each-item">Item 3</div>
+                    <div class="each-item">Item 4</div>
+                </div>
+                <div class="btn-group">
+                    <button class="btn" id="eachColorBtn">Color each()</button>
+                    <button class="btn" id="eachResetBtn">Reset</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 15: chaining -->
+        <section class="demo-section">
+            <h2>15. Method Chaining</h2>
+            <p>Chains multiple methods together</p>
+            <div class="demo-box">
+                <div class="demo-element" id="chainBox">
+                    <span>Chain Effects!</span>
+                </div>
+                <div class="btn-group">
+                    <button class="btn" id="chainBtn">Run Chain</button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

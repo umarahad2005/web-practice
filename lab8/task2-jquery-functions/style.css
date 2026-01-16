@@ -1,0 +1,293 @@
+/* ================================
+   jQuery Functions Demo - Style
+   Lab 8 - Modern Gradient Theme
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    color: #fff;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.header h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.header p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+}
+
+/* Demo Sections */
+.demo-section {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.demo-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.demo-section h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #f093fb;
+}
+
+.demo-section>p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Demo Box */
+.demo-box {
+    text-align: center;
+}
+
+.demo-element {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 100px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 15px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.demo-element span {
+    color: #fff;
+}
+
+/* Button Group */
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-color: transparent;
+    transform: translateY(-2px);
+}
+
+/* Animate Container */
+.animate-container {
+    position: relative;
+    min-height: 150px;
+}
+
+.animate-box {
+    position: relative;
+    left: 0;
+}
+
+/* Class manipulation styles */
+.class-box.highlight {
+    background: linear-gradient(135deg, #f093fb, #f5576c) !important;
+    transform: scale(1.1);
+    box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
+}
+
+/* Slide box */
+.slide-box {
+    overflow: hidden;
+}
+
+/* Text box */
+.text-box {
+    min-height: 60px;
+    padding: 20px;
+}
+
+.text-box p {
+    margin: 0;
+}
+
+.input-field {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px 16px;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-field:focus {
+    border-color: #667eea;
+    background: rgba(102, 126, 234, 0.1);
+}
+
+.input-field::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* Demo link */
+.demo-link {
+    display: inline-block;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.demo-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+/* Demo list */
+.demo-list {
+    list-style: none;
+    margin-bottom: 20px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.demo-list li {
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+}
+
+.demo-list li:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Event box */
+.event-box {
+    cursor: pointer;
+}
+
+.event-log {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+/* Each container */
+.each-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.each-item {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+/* Color variations for each() demo */
+.each-item.color-0 {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+}
+
+.each-item.color-1 {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+.each-item.color-2 {
+    background: linear-gradient(135deg, #43e97b, #38f9d7);
+}
+
+.each-item.color-3 {
+    background: linear-gradient(135deg, #fa709a, #fee140);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 28px;
+    }
+
+    .demo-section {
+        padding: 20px;
+    }
+
+    .demo-element {
+        width: 160px;
+        height: 80px;
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 10px 18px;
+        font-size: 12px;
+    }
+}

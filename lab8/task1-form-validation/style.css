@@ -1,0 +1,396 @@
+/* ================================
+   Live Form Validation - Style
+   Lab 8 - Premium Dark Theme
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.form-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.form-header h1 {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.form-header p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.required {
+    color: #ff6b6b;
+    font-size: 12px;
+}
+
+.optional {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 12px;
+    font-weight: 400;
+}
+
+/* Input Wrapper */
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 14px 45px 14px 16px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #fff;
+    font-size: 15px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.input-wrapper input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.input-wrapper input:focus {
+    border-color: #667eea;
+    background: rgba(102, 126, 234, 0.1);
+}
+
+/* Validation States */
+.input-wrapper input.valid {
+    border-color: #00d9a6;
+    background: rgba(0, 217, 166, 0.1);
+}
+
+.input-wrapper input.invalid {
+    border-color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.1);
+}
+
+/* Icon */
+.input-wrapper .icon {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.input-wrapper input.valid ~ .icon::before {
+    content: '✓';
+    color: #00d9a6;
+}
+
+.input-wrapper input.invalid ~ .icon::before {
+    content: '✗';
+    color: #ff6b6b;
+}
+
+.input-wrapper input.valid ~ .icon,
+.input-wrapper input.invalid ~ .icon {
+    opacity: 1;
+}
+
+/* Error Message */
+.error-message {
+    display: block;
+    color: #ff6b6b;
+    font-size: 12px;
+    margin-top: 6px;
+    min-height: 18px;
+    transition: all 0.3s ease;
+}
+
+/* Password Strength Bar */
+.password-strength {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.strength-bar {
+    height: 100%;
+    width: 0%;
+    border-radius: 2px;
+    transition: all 0.4s ease;
+}
+
+.strength-bar.weak { width: 25%; background: #ff6b6b; }
+.strength-bar.fair { width: 50%; background: #ffa726; }
+.strength-bar.good { width: 75%; background: #66bb6a; }
+.strength-bar.strong { width: 100%; background: #00d9a6; }
+
+/* Password Requirements */
+.password-requirements {
+    list-style: none;
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+}
+
+.password-requirements li {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.4);
+    padding-left: 18px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.password-requirements li::before {
+    content: '○';
+    position: absolute;
+    left: 0;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.password-requirements li.met {
+    color: #00d9a6;
+}
+
+.password-requirements li.met::before {
+    content: '●';
+    color: #00d9a6;
+}
+
+/* Checkbox Group */
+.checkbox-group {
+    margin-top: 25px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 13px;
+}
+
+.checkbox-label input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    width: 22px;
+    height: 22px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.checkmark::after {
+    content: '✓';
+    color: #fff;
+    font-size: 12px;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.3s ease;
+}
+
+.checkbox-label input:checked + .checkmark {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-color: transparent;
+}
+
+.checkbox-label input:checked + .checkmark::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.checkbox-text a {
+    color: #667eea;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.checkbox-text a:hover {
+    color: #764ba2;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 16px;
+    margin-top: 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.submit-btn:not(:disabled) {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.submit-btn:not(:disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+}
+
+.submit-btn:not(:disabled):active {
+    transform: translateY(0);
+}
+
+.btn-icon {
+    transition: transform 0.3s ease;
+}
+
+.submit-btn:hover .btn-icon {
+    transform: translateX(5px);
+}
+
+/* Success Message */
+.success-message {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.success-message.show {
+    display: block;
+    animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #00d9a6, #00b894);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: #fff;
+    animation: bounceIn 0.6s ease;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.success-message h2 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.success-message p {
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 25px;
+}
+
+.reset-btn {
+    padding: 12px 30px;
+    background: transparent;
+    border: 2px solid #667eea;
+    border-radius: 10px;
+    color: #667eea;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+    background: #667eea;
+    color: #fff;
+}
+
+/* Hide form when success */
+form.hidden {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .form-card {
+        padding: 30px 20px;
+    }
+    
+    .password-requirements {
+        grid-template-columns: 1fr;
+    }
+}
