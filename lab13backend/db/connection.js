@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const connection = ()=>{
     try {
-mongoose.connect('mongodb+srv://umarahadusmani_db_user:HdPXqOQ2Aa03P7qY@webpractice.3zg1b4d.mongodb.net/umarahadusmani_db')
+mongoose.connect('')
     .then(() => {
         console.log(' MongoDB connected successfully!');
     })
